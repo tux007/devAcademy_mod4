@@ -66,6 +66,7 @@ h1 {
   background-color: black;
   padding: 80px 80px;
   display: flex;
+  gap: 16px;
   justify-content: space-between;
 }
 .quicklink {
@@ -76,10 +77,13 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  /* width: 30%; */
+  flex: 1;
 }
 .quicklink img {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 .buy-ticket-section {
   background-color: #272727;
@@ -161,13 +165,24 @@ input::placeholder {
   display: flex;
 }
 
-@media(max-width: 700px) {
-    .display-mobile {
-        display: none;
-    }
-    h1 {
-        font-size: 48px;
-    }
-
+@media (max-width: 950px) {
+  .buy-ticket-section {
+    flex-direction: column;
+  }
 }
 
+@media (max-width: 700px) {
+  .display-mobile {
+    display: none;
+  }
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-quicklinks {
+    flex-direction: column;
+    gap: 100px;
+  }
+}
